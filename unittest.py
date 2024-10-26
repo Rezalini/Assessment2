@@ -11,37 +11,37 @@ Created on Mon Sep 30 14:59:49 2024
 
 @author: rezaf
 """
-
+#importing the unit test library for test:
 import unittest
-
+#import functions from the main program
 from as2 import add_value , delete_value, sort_value, add_value2, delete_value2, sorting_list, searching_value2
-
+# class for testing the list program (section one of assessment)
 class Testlistfunctions(unittest.TestCase):
-    
+    # pretest functions
     def setUp(self):
         self.movie_stars = ["Reza","Bailey","Aleks","Hong","Tatenda"]
         self.movies = ["Forrest Gump", "The Dark Knight", "The Godfather"]
         self.games = ["The Witcher 3", "God of War", "Minecraft"]
-    
+    # testing add value to directory
     def test_add_value(self):
         new_value = "Alice"
         result = add_value(self.movie_stars, new_value)
         self.assertIn(new_value, result)
-    
+      # Test sorting (ascending) keys in a dictionary
     def test_sort_value_ascending(self):
         result = sort_value(self.movie_stars)
         self.assertEqual(result, sorted(self.movie_stars) )
-    
+      # Test sorting (descending) keys in a dictionary
     def test_sort_value_descending(self):
         self.games.sort(reverse=True)
         result = self.games
         self.assertEqual(result, sorted(self.games, reverse=True))
-        
+    # Test deleting values from a dictionary 
     def test_delete_value(self):
         delete_game = "God of War" 
         result = delete_value(self.games,delete_game)
         self.assertNotIn(delete_game, result)
-        
+     # Testing search (searching is in the I(searching) section)    
     def test_search_value(self):
         # Testing search (searching is in the I(searching) section)
         search_item = "Forrest Gump"
@@ -50,9 +50,9 @@ class Testlistfunctions(unittest.TestCase):
         self.assertNotIn(search_item, self.movies)       
         
 ###############################################################################        
-
+# class for testing the list program (section one of assessment)
 class TestDictionaryFunctions2(unittest.TestCase):
-
+    # a temporary list for testing functions
     def setUp(self):
         """Sets up initial data for testing"""
         self.actors_birthdays = {
