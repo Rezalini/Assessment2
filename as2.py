@@ -4,11 +4,7 @@ Created on Mon Sep 30 15:11:34 2024
 @author: Reza Farzam 20137189
 """
 
-"""
-Part A
 
-In this part we have to create three list and test some function on them. 
-"""
 # coding
 
 
